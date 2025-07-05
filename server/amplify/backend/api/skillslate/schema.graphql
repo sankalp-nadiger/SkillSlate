@@ -1,0 +1,14 @@
+type User @model {
+  id: ID!
+  name: String!
+  email: String!
+  bio: String
+  skills: [Skill] @hasMany
+}
+
+type Skill @model {
+  id: ID!
+  name: String!
+  level: String
+  user: User @belongsTo
+}
